@@ -1,4 +1,5 @@
 # wuspViewPkg
+I have changed the name to IndicatorBox.
 
 This package includes some of Android custom views I create, most of them have animation effects. <br />
 I'll add my custom views to this package and optimize them continually. <br />
