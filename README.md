@@ -3,7 +3,7 @@ I have changed the name to IndicatorBox from wuspViewPkg.
 
 This package includes some of Android custom views I create, most of them have animation effects. <br />
 I'll add my custom views to this package and optimize them continually. <br />
-Each of them has a .gif animation to simply display the animation effect and using example. <br />
+Each of them has a .gif animation to simply display the animation effect and at least one using example. <br />
 
 ####Menu
 [FlashBorderView](https://github.com/wusp/WuspViewPkg#flashborderview)<br />
