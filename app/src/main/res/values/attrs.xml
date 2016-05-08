@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FlashBorderView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="BounceFreeBar">
+        <attr name="point_color" format="color" />
+        <attr name="line_color" format="color"/>
+        <attr name="line_width" format="dimension" />
+        <attr name="line_height" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="PointIndicator">
+        <attr name="indicator_width" format="dimension" />
+        <attr name="indicator_height" format="dimension" />
+        <attr name="indicator_gap" format="dimension" />
+        <attr name="indicator_animator" format="reference" />
+        <attr name="indicator_selected_src" format="reference" />
+        <attr name="indicator_unselected_src" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="ViewPagerIndicator">
+        <attr name="small_text_color" format="color" />
+        <attr name="big_text_color" format="color" />
+        <attr name="slash_color" format="color" />
+        <attr name="small_text_size" format="dimension" />
+        <attr name="big_text_size" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="LineProgressBar">
+        <attr name="progressed_color" format="color"/>
+        <attr name="unprogressed_color" format="color" />
+        <attr name="completed_color" format="color" />
+        <attr name="bar_height" format="color" />
+    </declare-styleable>
+    <declare-styleable name="RippleCircle">
+        <attr name="circle_radius" format="dimension" />
+        <attr name="circle_color" format="color" />
+        <attr name="ripple_color" format="color" />
+        <attr name="ripple_width" format="dimension" />
+    </declare-styleable>
+</resources>

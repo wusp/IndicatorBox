@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlContent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <ImageView
+        android:id="@+id/ivUserPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sunset" />
+
+    <LinearLayout
+        android:id="@+id/llUserDataNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/ivUserPhoto"
+        android:layout_marginTop="@dimen/margin_user_data_column_to_top_and_bottom"
+        android:layout_marginBottom="@dimen/margin_user_data_column_to_top_and_bottom"
+        android:layout_marginLeft="@dimen/margin_user_data_column_to_left_and_right"
+        android:layout_marginRight="@dimen/margin_user_data_column_to_left_and_right">
+        <TextView
+            android:id="@+id/tvNumMyCollect"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="36sp"
+            android:textColor="@color/colorAccent"
+            android:gravity="center"
+            android:text="37"/>
+
+        <TextView
+            android:id="@+id/tvNumMyShare"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="36sp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"
+            android:text="54"/>
+
+        <TextView
+            android:id="@+id/tvNumMyComment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="36sp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"
+            android:text="12"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llUserDataName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/llUserDataNum"
+        android:layout_marginTop="@dimen/margin_user_data_column_to_top_and_bottom"
+        android:layout_marginBottom="@dimen/margin_user_data_column_to_top_and_bottom"
+        android:layout_marginLeft="@dimen/margin_user_data_column_to_left_and_right"
+        android:layout_marginRight="@dimen/margin_user_data_column_to_left_and_right">
+        <TextView
+            android:id="@+id/tvNameMyCollect"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"
+            android:text="@string/collected"/>
+
+        <TextView
+            android:id="@+id/tvNameMyShare"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"
+            android:text="@string/shared"/>
+
+        <TextView
+            android:id="@+id/tvNameMyComment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"
+            android:text="@string/commented"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llUserDataIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/llUserDataName"
+        android:layout_marginTop="@dimen/margin_user_data_column_to_top_and_bottom"
+        android:layout_marginBottom="@dimen/margin_user_data_column_to_top_and_bottom"
+        android:layout_marginLeft="@dimen/margin_user_data_column_to_left_and_right"
+        android:layout_marginRight="@dimen/margin_user_data_column_to_left_and_right">
+        <com.wusp.indicatorbox_library.RippleCircle.RippleCircle
+            android:id="@+id/rcCollected"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            app:circle_color="@android:color/holo_blue_dark"/>
+        <com.wusp.indicatorbox_library.RippleCircle.RippleCircle
+            android:id="@+id/rcShared"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            app:circle_color="@android:color/holo_orange_dark"/>
+        <com.wusp.indicatorbox_library.RippleCircle.RippleCircle
+            android:id="@+id/rcCommented"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            app:circle_color="@android:color/holo_red_dark"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvStrLatestRecommend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:text="@string/latest_recommend"
+        android:layout_below="@id/llUserDataIndicator"
+        android:layout_marginTop="@dimen/margin_user_data_column_to_top_and_bottom"
+        android:layout_marginBottom="@dimen/margin_user_data_column_to_top_and_bottom"
+        android:layout_marginLeft="6dp" />
+
+    <com.wusp.indicatorbox_library.FlashBorder.FlashBorderView
+        android:id="@+id/flashBorder1"
+        android:layout_below="@id/tvStrLatestRecommend"
+        android:layout_marginTop="@dimen/margin_user_data_column_to_top_and_bottom"
+        android:layout_marginBottom="@dimen/margin_user_data_column_to_top_and_bottom"
+        android:layout_marginLeft="@dimen/margin_user_news_recommend_to_left_and_right"
+        android:layout_marginRight="@dimen/margin_user_news_recommend_to_left_and_right"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#E8E8E8"/>
+
+    <com.wusp.indicatorbox_library.FlashBorder.FlashBorderView
+        android:id="@+id/flashBorder2"
+        android:layout_below="@id/flashBorder1"
+        android:layout_marginTop="@dimen/margin_user_data_column_to_top_and_bottom"
+        android:layout_marginBottom="@dimen/margin_user_data_column_to_top_and_bottom"
+        android:layout_marginLeft="@dimen/margin_user_news_recommend_to_left_and_right"
+        android:layout_marginRight="@dimen/margin_user_news_recommend_to_left_and_right"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#E8E8E8"/>
+
+    <com.wusp.indicatorbox_library.FlashBorder.FlashBorderView
+        android:id="@+id/flashBorder3"
+        android:layout_below="@id/flashBorder2"
+        android:layout_marginTop="@dimen/margin_user_data_column_to_top_and_bottom"
+        android:layout_marginLeft="@dimen/margin_user_news_recommend_to_left_and_right"
+        android:layout_marginRight="@dimen/margin_user_news_recommend_to_left_and_right"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#E8E8E8"/>
+
+</RelativeLayout>
