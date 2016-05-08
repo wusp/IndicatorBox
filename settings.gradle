@@ -1,1 +1,1 @@
-include ':app', ':indicatorbox-library'
+include ':Demo', ':indicatorbox-library'
