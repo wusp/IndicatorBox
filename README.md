@@ -15,7 +15,7 @@ Each of them has a .gif animation to simply display the animation effect and usi
 [ShrinkButton](https://github.com/wusp/WuspViewPkg#shrinkbutton)<br />
 
 ## FlashBorderView
-![](https://github.com/wusp/WuspViewPkg/blob/master/app/src/main/java/com/wusp/wuspviewpkg/FlashBorder/flashborder.gif)
+![](https://github.com/wusp/IndicatorBox/blob/master/Demo/src/main/java/com/wusp/indicatorbox/example-gif/flashborder.gif)
 
 The FlashBorderView extends LinearLayout, so you can add the views you want just like using LinearLayout.
 Animation is controlled by the parameter mFraction, so for each animation fraction you should invoke
@@ -51,10 +51,10 @@ or create a subclass of RippleCircle, for example ViewPagerIndicator on ViewPage
 ```
 
 FlashBorder and RippleCircle using example: <br />
-![](https://github.com/wusp/WuspViewPkg/blob/master/app/src/main/java/com/wusp/wuspviewpkg/FlashBorder/flashborderripplecircle.gif)
+![](https://github.com/wusp/IndicatorBox/blob/master/Demo/src/main/java/com/wusp/indicatorbox/example-gif/flashborderripplecircle.gif)
 
 ##PointIndicator && ViewPagerIndicator
-![](https://github.com/wusp/WuspViewPkg/blob/master/app/src/main/java/com/wusp/wuspviewpkg/ViewPagerIndicator/viewpagerindicator.gif)<br />
+![](https://github.com/wusp/IndicatorBox/blob/master/Demo/src/main/java/com/wusp/indicatorbox/example-gif/viewpagerindicator.gif)<br />
 The PointIndicator is that series of points used to indicator something. PointIndicator extends LinearLayout, so you change the direction of points by setting the direction property.
 Both of them are designed to work with ViewPager and easy to use, after defining on layout.xml, just invoke
 ```Java
@@ -85,7 +85,7 @@ ViewPagerIndicator
 ```
 
 ##DynamicMarkArea
-![](https://github.com/wusp/WuspViewPkg/blob/master/app/src/main/java/com/wusp/wuspviewpkg/MarkArea/markArea.gif)<br />
+![](https://github.com/wusp/IndicatorBox/blob/master/Demo/src/main/java/com/wusp/indicatorbox/example-gif/markArea.gif)<br />
 Nothing sepcial here. Just the example of using DynamicPatternDrawer interface.
 To display different animation content, just to invoke
 ```Java
@@ -95,13 +95,13 @@ markArea.perform();
 then the view would perform the animation content you design.
 
 ##ParticleHeartView
-![](https://github.com/wusp/WuspViewPkg/blob/master/app/src/main/java/com/wusp/wuspviewpkg/Particle/particleheart.gif)<br />
+![](https://github.com/wusp/IndicatorBox/blob/master/Demo/src/main/java/com/wusp/indicatorbox/example-gif/particleheart.gif)<br />
 First, it's just an example of combining particle system and other animation effects (ex. circle-expanding and heart-beat here).
 Second, the ParticleHeartView design idea comes from Twitter like button which you can see on Twitter applications.
 Third, obviously the particle system is so great and so powerful, you can use particle system to make dramatic animations, don't be restricted by this example, just do your beautiful and amazing customization.
 
 ##BounceFreeBar
-![](https://github.com/wusp/WuspViewPkg/blob/master/app/src/main/java/com/wusp/wuspviewpkg/ProgressBar/bounce-freedown.gif)<br />
+![](https://github.com/wusp/IndicatorBox/blob/master/Demo/src/main/java/com/wusp/indicatorbox/example-gif/bounce-freedown.gif)<br />
 Well, I think that may be this animation is too thin (is not!), which needs to cooperate with other animations to perform a more beautiful and splendid animation effect.
 The time the bar is visible on window, the animation would be started automatically and stop itself when it's invisible on window.
 ####Custom Attributes
@@ -113,7 +113,7 @@ The time the bar is visible on window, the animation would be started automatica
 ```
 
 ##ShrinkButton
-![](https://github.com/wusp/WuspViewPkg/blob/master/app/src/main/java/com/wusp/wuspviewpkg/ShrinkButton/shrinkbutton.gif)<br />
+![](https://github.com/wusp/IndicatorBox/blob/master/Demo/src/main/java/com/wusp/indicatorbox/example-gif/shrinkbutton.gif)<br />
 The ShrinkButton is just a rounded button which rectangle part would perform a diminishing animation (specific to a 45 px radius corner here.) and then perform an infinite dynamic animation at the center of the view (if there's an animation) as the follwing.
 
 #License
