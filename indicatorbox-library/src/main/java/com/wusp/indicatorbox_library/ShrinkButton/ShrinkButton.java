@@ -24,6 +24,7 @@ public class ShrinkButton extends Button implements View.OnTouchListener{
     public static final int STATE_SHRINKING = 1;
     public static final int STATE_SHRINKED = 2;
     public static final int STATE_PROGRESSING = 3;
+    public static final int STATE_EXPANDING = 4;
     //The button's width first created.
     private int mButtonInitialWidth;
     //Used to control the progressing drawing.
@@ -35,12 +36,16 @@ public class ShrinkButton extends Button implements View.OnTouchListener{
     private ValueAnimator mShrinkingController;
     //Used to control the progressing animation.
     private ValueAnimator mProgressingController;
+    //Used to control the back-expanding animation.
+    private ValueAnimator mExpandingController;
     //To remark which
     private int animationState = -1;
     //Used to draw the inner pattern.
     private DynamicPatternDrawer patternDrawer;
     //Used to indicate whether is showing on the front window.
     private boolean isWindowFocused = false;
+    //Used to record the button text (if there is).
+    private String buttonText;
 
     public ShrinkButton(Context context) {
         super(context);
@@ -79,6 +84,7 @@ public class ShrinkButton extends Button implements View.OnTouchListener{
             @Override
             public void onAnimationStart(Animator animation) {
                 //Make text disappeared.
+                buttonText = getText().toString();
                 setText(null);
                 animationState = STATE_SHRINKING;
             }
@@ -87,6 +93,44 @@ public class ShrinkButton extends Button implements View.OnTouchListener{
             public void onAnimationEnd(Animator animation) {
                 animationState = STATE_SHRINKED;
                 startProgressingAnimation();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+    }
+
+    private void initExpandingAnimationController(){
+        mExpandingController = ValueAnimator.ofFloat(0, 1);
+        mExpandingController.setDuration(mShrinkingDuration);
+        mExpandingController.setInterpolator(new DecelerateInterpolator());
+        mExpandingController.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                ViewGroup.LayoutParams lp = getLayoutParams();
+                lp.width = (int) (lp.height + (mButtonInitialWidth - lp.height) * (float) animation.getAnimatedValue());
+                setLayoutParams(lp);
+            }
+        });
+        mExpandingController.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                animationState = STATE_EXPANDING;
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                animationState = STATE_EXPANDED;
+                if (null != buttonText){
+                    setText(buttonText);
+                }
             }
 
             @Override
@@ -239,6 +283,21 @@ public class ShrinkButton extends Button implements View.OnTouchListener{
     }
 
     /**
+     * Start back-expanding animation.
+     */
+    private void startExpandingAnimation(){
+        if (!isWindowFocused)   return;
+        if (mExpandingController == null){
+            initExpandingAnimationController();
+        }
+        if (mExpandingController.isRunning() || mExpandingController.isStarted()){
+            mExpandingController.end();
+            mExpandingController.cancel();
+        }
+        mExpandingController.start();
+    }
+
+    /**
      * Stop all animations including shrinking and progressing.
      */
     public void stop(){
@@ -304,6 +363,12 @@ public class ShrinkButton extends Button implements View.OnTouchListener{
         this.patternDrawer = patternDrawer;
     }
 
+    public void reset(){
+        //Stop the previous progressing animation.
+        stop();
+        startExpandingAnimation();
+    }
+
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         switch (MotionEventCompat.getActionMasked(event)){
@@ -313,8 +378,6 @@ public class ShrinkButton extends Button implements View.OnTouchListener{
                 }
                 if (animationState == STATE_EXPANDED){
                     startWholeAnimation();
-                }else if (animationState == STATE_SHRINKED || animationState == STATE_PROGRESSING){
-                    startProgressingAnimation();
                 }
                 this.callOnClick();
                 return true;
